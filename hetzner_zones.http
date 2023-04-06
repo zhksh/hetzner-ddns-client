@@ -1,0 +1,89 @@
+GET https://dns.hetzner.com/api/v1/?per_page=5
+Auth-API-Token: 6WZpGbLVSR1c0VkSmxpU4CsuhLR3e1db
+###
+
+GET https://dns.hetzner.com/api/v1/zones?name=ncmg.eu
+Auth-API-Token: 6WZpGbLVSR1c0VkSmxpU4CsuhLR3e1db
+
+
+###
+
+POST http://10.10.1.1:8081/endpoint
+Content-Type: application/json
+Auth-API-Token: 6WZpGbLVSR1c0VkSmxpU4CsuhLR3e1db
+User-Agent: Apache-Camachejajaja
+
+{
+  "Host": "test.io.",
+  "TTL": 300,
+  "Type": "A",
+  "Data" : "0.0.0.2"
+}
+###
+
+GET http://10.10.1.1:8081/pubip
+Content-Type: application/json
+Auth-API-Token: 6WZpGbLVSR1c0VkSmxpU4CsuhLR3e1db
+User-Agent: Apache-Camachejajaja
+
+###
+
+GET http://orph:8081/add-record
+Content-Type: application/json
+
+{
+"zone" : "ncmg.eu",
+"domain" : "io"
+}
+###
+
+GET http://orph:8081/pubip
+Content-Type: application/json
+
+{
+  "zone" : "ncmg.eu",
+  "sub" : "io"
+}
+###
+
+GET http://localhost:8081/api/v1/add-record
+Content-Type: application/json
+
+{
+  "zone" : "janineguldener.com",
+  "sub" : "ddns"
+
+}
+
+###
+
+GET http://localhost:8081/api/v1/update-record
+Content-Type: application/json
+
+{
+  "zone" : "ncmg.eu",
+  "sub" : "ddns"
+
+}
+
+###
+
+GET http://localhost:8888/api/v1/delete-record
+Content-Type: application/json
+
+{
+  "zone" : "janineguldener.com",
+  "sub" : "ddns"
+
+}
+
+###
+
+
+PUT https://dns.hetzner.com/api/v1/records/4ded6213573886da160da93d0c475a4f
+Content-Type: application/json
+Auth-API-Token: 6WZpGbLVSR1c0VkSmxpU4CsuhLR3e1db
+
+{"value":"93.104.163.101","ttl":86400,"name":"ddns","zone_id":"cjh5nyaJraro4Er4koQYrA","created":"2021-06-14 10:10:27.891 +0000 UTC","modified":"2021-06-14 10:10:27.891 +0000 UTC","type":"A","id":"4ded6213573886da160da93d0c475a4f"}
+
+###
